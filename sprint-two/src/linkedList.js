@@ -5,11 +5,11 @@ var LinkedList = function() {
 
   list.addToTail = function(value) {
     if (list.tail === null) {
-      var node = new Node(value);
+      var node = Node(value);
       list.tail = node;
       list.head = node;
     } else {
-      var node = new Node(value);
+      var node = Node(value);
       list.tail.next = node;
       list.tail = node;
     }
