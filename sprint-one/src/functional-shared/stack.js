@@ -11,7 +11,6 @@ var Stack = function() {
   // Use an object with numeric keys to store values
   someInstance.storage = {};
   someInstance.count = 0;
-
   someInstance = extend(someInstance, stackMethods);
   //console.log('someInstance, ', someInstance);
 
