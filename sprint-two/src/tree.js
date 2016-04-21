@@ -1,6 +1,6 @@
 var Tree = function(value) {
   var newTree = {};
-  newTree = Object.create(treeMethods);
+  newTree = Object.create(treeMethods); //need to change to extend
   newTree.value = value;
   newTree.children = [];  // fix me
 
