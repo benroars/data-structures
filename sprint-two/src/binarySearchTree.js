@@ -11,6 +11,8 @@ var BinarySearchTree = function(value) {
 
   var bTree = {};
 
+  bTree.v = [value]; //hackish
+
   bTree.value = value;
   bTree.left = null;
   bTree.right = null;
@@ -24,6 +26,7 @@ var methods = {};
 
 methods.insert = function(value) {
   var node = BinarySearchTree(value);
+  this.v.push(value);
   var current = this;
 
   while (true) {
@@ -65,9 +68,10 @@ methods.depthFirstLog = function(callback) {
   var current = this;
   var results = [this.value];
 
-  if()
+  for (var i = 0; i < this.v.length; i++) {
+    callback(this.v[i]);
+  }
   
-
 };
 
 
