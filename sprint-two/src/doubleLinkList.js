@@ -26,8 +26,25 @@ DoubleLinkList.prototype.removeHead = function() {
   return val;
 };
 
-DoubleLinkList.prototype.contains = function(node) {
+DoubleLinkList.prototype.contains = function(value) {
+  var current = this.head;
+  while (true) {
+    if (current.value === value) {
+      return true;
+    } else if (current.right === null) {
+      if (current.value === value) {
+        return true;
+      } else {
+        return false;
+      }
+    } else if (current.right !== null) {
+      current = current.right;
+    } else {
+      break;
+    }
+  }
 
+  return false;
 };
 
 var Node = function(value) {
@@ -36,12 +53,12 @@ var Node = function(value) {
   this.right = null;
 };
 
-//var doub = new DoubleLinkList();
+var doub = new DoubleLinkList();
 //doub.addToTail(5);
 //doub.addToTail(4);
 //doub.addToTail(3);
 //doub.addToTail(2);
 //var x = doub.removeHead();
-//var y = doub.removeHead();
-//console.log(doub, x, y);
+//var x = doub.contains(5);
+//console.log(x);
 
