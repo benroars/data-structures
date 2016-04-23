@@ -65,13 +65,25 @@ methods.contains = function(value) {
 };
 
 methods.depthFirstLog = function(callback) {
-  var current = this;
-  var results = [this.value];
+ // // var current = this;
+ //  var results = [this.value];
 
-  for (var i = 0; i < this.v.length; i++) {
-    callback(this.v[i]);
-  }
+ //  for (var i = 0; i < this.v.length; i++) {
+ //    callback(this.v[i]);
+ //  }
   
+  //recursively left, recusive call right
+  var recursiveFxn = function(node) {
+    callback(node.value);
+    if (node.left !== null) {
+      recursiveFxn(node.left);
+    }
+    if (node.right !== null) {
+      recursiveFxn(node.right);
+    }
+  };
+
+  recursiveFxn(this);
 };
 
 
