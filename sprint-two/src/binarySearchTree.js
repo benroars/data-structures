@@ -1,15 +1,7 @@
-var extend = function(obj, obj2) {
-  for (var key in obj2) {
-    obj[key] = obj2[key];
-  }
-  return obj;
-};
-
-
 var BinarySearchTree = function(value) {
-  //var bTree = Object.create(methods);
+  var bTree = Object.create(methods);
 
-  var bTree = {};
+  //var bTree = {};
 
   bTree.v = [value]; //hackish
 
@@ -17,7 +9,7 @@ var BinarySearchTree = function(value) {
   bTree.left = null;
   bTree.right = null;
 
-  bTree = extend(bTree, methods);
+  //bTree = extend(bTree, methods);
   
   return bTree;
 };
@@ -65,13 +57,6 @@ methods.contains = function(value) {
 };
 
 methods.depthFirstLog = function(callback) {
- // // var current = this;
- //  var results = [this.value];
-
- //  for (var i = 0; i < this.v.length; i++) {
- //    callback(this.v[i]);
- //  }
-  
   //recursively left, recusive call right
   var recursiveFxn = function(node) {
     callback(node.value);

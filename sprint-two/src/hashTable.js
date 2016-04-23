@@ -56,7 +56,7 @@ HashTable.prototype.remove = function(k) {
 
   for (var i = 0; i < temp.length; i++) {
     if (temp[i][0] === k) {
-      //splice it out
+      //need to splice it out, instead of just setting to undefined
       temp[i][1] = undefined;
     }
   }
